@@ -11,9 +11,6 @@ The fsdb is organizing the raw data together with their secondary data strictly 
 
 The structure of the file system used by the fsdb is defined in the .scripts.config file, which is dynamically generated in the fsdb's core scripts' directory. A more detailed description of this file can be found in the dedicated documentation [below](#scriptsconfig).
 
-Documentation on the actions of the shell-scripts of the fsdb are included into a README-section at the head of each of them. An excerpt of these sections can be found [below](#file-specific-documentation-for-the-fsdb).
-----
-
 
 # Installation of the fsdb
 
