@@ -12,22 +12,23 @@ The fsdb is organizing the raw data together with their secondary data strictly 
 The structure of the file system used by the fsdb is defined in the .scripts.config file, which is dynamically generated in the fsdb's core scripts' directory. A more detailed description of this file can be found in the dedicated documentation [below](#scriptsconfig).
 
 
+
 # Installation of the fsdb
 
 We are offering two methods for the installation of the fsdb. Both are guiding you through the installation and give you the opportunity to decide, which part of the installtion you want to run - or not. 
 
 ## Automatic install
 
-The easiest for a stright-forward (de-novo) installation of the fsdb is to clone the repository fsdb-install and run the fsdb-install.sh
+The easiest for a stright-forward (de-novo) installation of the fsdb is to clone the repository [fsdb-install](https://gitlab.com/tefor/fsdb/fsdb-install/) and run the install-fsdb.sh
 ```
-[git clone https://gitlab.com/tefor/fsdb/fsdb-install/-/tree/main](https://gitlab.com/tefor/fsdb/fsdb-install/-/tree/main)
+git clone https://gitlab.com/tefor/fsdb/fsdb-install/-/tree/main
 cd ./fsdb-install
-sudo bash fsdb-install.sh
+sudo bash install-fsdb.sh
 ```
 
 ## Manual install
 
-For a manual installation please download the `initializeFsdb.sh` from the [*install* directory](https://gitlab.com/arnimjenett/fsdb23/-/tree/main/install) of this [project](https://gitlab.com/arnimjenett/fsdb23.git) and run in a terminal using sudo.
+For a manual installation please download the `initializeFsdb.sh` from the [*install* directory](https://gitlab.com/tefor/fsdb/fsdb-core/-/tree/main/install) of the [fsdb-core](https://gitlab.com/tefor/fsdb/fsdb-core/) module and run the necessary scripts in a terminal using sudo.
 ```
 sudo bash [path to your download directory]/initializeFsdb.sh
 ```
@@ -37,9 +38,9 @@ For an update or repair of a pre-existing installation of the fsdb you can run t
 ```
 sudo bash [path to your local installation]/install/installFsdb.sh
 ```
-This will update the scripts of fsdb (from its [gitlab repo](https://gitlab.com/arnimjenett/fsdb23/)) and guide you through the updating process.   
+This will update the scripts of fsdb (from its [gitlab repo](https://gitlab.com/tefor/fsdb)) and guide you through the updating process.   
 
-While the fsdb is meant to run in the background (non-interactive) on a Linux server it can - with some limitation - also be run in the 'Windows Subsystem for Linux' (wsl2).
+While the fsdb is designed to run in the background (non-interactive) on a Linux server it can - with some limitation - also be run in the 'Windows Subsystem for Linux' (wsl2). However, this use-case was very little tested on our and therefore is not recommended.
 
 # Installation of individual modules
 The fsdb has a modular structure which allows to install only the wanted functionalities. 
@@ -55,7 +56,7 @@ Optionally can be installed:
 
 # Preparation of the image acquisition systems (IAS)
 
-The image acquisition systems (IAS), serviced by the fsdb need to make the storage location of the images for the fsdb accessible to the fsdb-server. As most IAS run windows as operating system please refer to the microsoft article [File sharing over a network in Windows](https://support.microsoft.com/en-us/windows/file-sharing-over-a-network-in-windows-b58704b2-f53a-4b82-7bc1-80f9994725bf#ID0EBD&ID0EBD) for the details. For security reasons we suggest to share access to this directory exclusivly with an account you create for this task on the IAS (e.g., fsdbrobot).    
+The image acquisition systems (IAS), serviced by the fsdb need to make the storage location of the images for the fsdb accessible to the fsdb-server. As most IAS run windows as operating system please refer to the microsoft article [File sharing over a network in Windows](https://support.microsoft.com/en-us/windows/file-sharing-over-a-network-in-windows-b58704b2-f53a-4b82-7bc1-80f9994725bf#ID0EBD&ID0EBD) for the details. For security reasons we suggest to share access to this directory exclusivly with an account you create for this task on the IAS (e.g., datarobot).    
 The following information of the IAS will be needed during the setup of the fsdb to facilitate the automatic file transfer:
 - IP address of the IAS
 - (shared) name of the shared directory
@@ -76,7 +77,7 @@ For the root-directory of the storage partition of your IAS
   
 For reasons of hard disk space management we suggest to structure the storage partition of your IAS as follows
 IAS (computer)
-- storage (partition or hard drive) <-- make this a shared directory
+- storage (partition or hard drive) <- make this a shared directory
   - user1 (*)
   - user2 (*)
   - user3 (*)
