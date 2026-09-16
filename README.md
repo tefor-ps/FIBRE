@@ -19,9 +19,13 @@ We are offering two methods for the installation of the fsdb. Both are guiding y
 
 ## Automatic install
 
-The easiest for a stright-forward (de-novo) installation of the fsdb is to clone the repository [fsdb-install](https://gitlab.com/tefor/fsdb/fsdb-install/) and run the install-fsdb.sh
+The easiest for a stright-forward (de-novo) installation of the fsdb is to clone the repository [fsdb-install](https://gitlab.com/tefor/fsdb/fsdb-install/) and run the install-fsdb.sh.
+In a terminal execute
 ```
 git clone https://gitlab.com/tefor/fsdb/fsdb-install.git
+```
+followed by 
+```
 cd fsdb-install
 bash install-fsdb.sh
 ```
